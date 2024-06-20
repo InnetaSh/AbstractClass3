@@ -30,7 +30,7 @@ namespace AbstractClass3
             {
                 if (itemL.Title == item.Title)
                 {
-                    Console.WriteLine($"Ресурс с названием {item.Title} уже был добавлен в библиотеку ранее.");
+                    Console.WriteLine($"Ресурс с названием \'{item.Title}\' уже был добавлен в библиотеку ранее.");
                     flag = true;
                     break;
                 }
@@ -38,7 +38,7 @@ namespace AbstractClass3
             if (!flag)
             {
                 LibraryItems.Add(item);
-                Console.WriteLine($"Ресурс с названием {item.Title} добавлен в библиотеку.");
+                Console.WriteLine($"Ресурс с названием \'{item.Title}\' добавлен в библиотеку.");
             }
         }
         public void RemoveItem(LibraryItem item)
@@ -49,14 +49,15 @@ namespace AbstractClass3
                 if (itemL.Title == item.Title)
                 {
                     LibraryItems.Remove(item);
-                    Console.WriteLine($"Ресурс с названием {item.Title} удален из библиотеки.");
+                    Console.WriteLine($"Ресурс с названием \'{item.Title}\' удален из библиотеки.");
                     flag = true;
                     break;
                 }
             }
             if (!flag)
-                Console.WriteLine($"Ресурс с названием {item.Title} не найден в библиотеке.");
+                Console.WriteLine($"Ресурс с названием \'{item.Title}\' не найден в библиотеке.");
         }
+        
         public void DisplayItems()
         {
             if (LibraryItems.Count == 0)
@@ -65,6 +66,7 @@ namespace AbstractClass3
             {
                 var str = item.GetInfo();
                 Console.WriteLine(str);
+                Console.WriteLine("-----------------------------------------------------------");
             }
         }
     }
